@@ -8,22 +8,19 @@
 import Foundation
 import UIKit
 
-enum MainStoryboards: String, InitiatableStoryboardSource {
-    case MainTabBarController
-    
-    var storyBoardName: String {
-        return self.rawValue
-    }
-}
-
 protocol InitiatableStoryboardSource {
-    var storyBoardName: String { get }
+    // enum의 rawValue 자체 또한 protocol로 처리가 가능하다. - 사실상 enum을 사용해야 하는데 이렇게 강제시키는 것이 맞을까?
+    var rawValue: String { get }
     var storyBoard: UIStoryboard { get }
     func initialViewController<ViewControllerType: UIViewController>(_ type: ViewControllerType.Type) -> ViewControllerType?
     func targetViewController<ViewControllerType: UIViewController>(_ identifier: String, _ type: ViewControllerType.Type) -> ViewControllerType?
 }
 
 extension InitiatableStoryboardSource {
+    private var storyBoardName: String {
+        return self.rawValue
+    }
+    
     var storyBoard: UIStoryboard {
         return UIStoryboard(name: storyBoardName, bundle: nil)
     }

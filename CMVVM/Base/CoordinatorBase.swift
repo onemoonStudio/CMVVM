@@ -18,6 +18,8 @@ enum CoordinationType {
 
 protocol CoordinatorBase: StoryBoardableCoordinator {
     var viewController: UIViewController? { get }
+    // TODO: Add , remove
+    var childCoordinators: [CoordinatorBase] { get set }
 }
 
 extension CoordinatorBase {
