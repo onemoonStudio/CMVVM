@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/swift,cocoapods,git,swiftpackagemanager
-# Edit at https://www.toptal.com/developers/gitignore?templates=swift,cocoapods,git,swiftpackagemanager
+# Created by https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods
+# Edit at https://www.toptal.com/developers/gitignore?templates=swift,xcode,cocoapods
 
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
@@ -9,21 +9,6 @@
 #           - Also handy if you have a large number of dependant pods
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
-
-### Git ###
-# Created by git for backups. To disable backups in Git:
-# $ git config --global mergetool.keepBackup false
-*.orig
-
-# Created by git when using merge tools for conflicts
-*.BACKUP.*
-*.BASE.*
-*.LOCAL.*
-*.REMOTE.*
-*_BACKUP_*.txt
-*_BASE_*.txt
-*_LOCAL_*.txt
-*_REMOTE_*.txt
 
 ### Swift ###
 # Xcode
@@ -109,10 +94,21 @@ fastlane/test_output
 
 iOSInjectionProject/
 
-### SwiftPackageManager ###
-Packages
-xcuserdata
-*.xcodeproj
+### Xcode ###
+# Xcode
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 
-# End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods,git,swiftpackagemanager
+
+
+## Gcc Patch
+/*.gcno
+
+### Xcode Patch ###
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# End of https://www.toptal.com/developers/gitignore/api/swift,xcode,cocoapods
