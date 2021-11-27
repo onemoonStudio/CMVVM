@@ -11,12 +11,15 @@ enum MainStoryboards: String, InitiatableStoryboardSource {
     case MainTabBarController
 }
 
-final class MainTabBarCoordinator: CoordinatorBase {
-    var viewController: UIViewController? {
-        let tabBarController = storyBoardViewController(MainStoryboards.MainTabBarController, MainTabBarController.self)
-        tabBarController?.viewControllers = childCoordinators.compactMap { $0.viewController }
-        return storyBoardViewController(MainStoryboards.MainTabBarController, MainTabBarController.self)
+final class MainTabBarCoordinator: CoordinatorBaseClass {
+    func setViewControllers() {
+        guard let tabBarController = presentable as? UITabBarController else {
+            fatalError()
+        }
+        
     }
     
-    lazy var childCoordinators: [CoordinatorBase] = [SearchCoordinator()]
+    func searchCoordinator() -> SearchCoordinator {
+    
+    }
 }
