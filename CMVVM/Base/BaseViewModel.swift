@@ -10,6 +10,10 @@ import Foundation
 class BaseViewModel: BaseViewModelProtocol {
     weak var coordinator: ViewModelCoordinatorConnector?
     
+    init(coordinator: ViewModelCoordinatorConnector) {
+        self.coordinator = coordinator
+    }
+    
     deinit {
         freeSelfCoordinator()
     }

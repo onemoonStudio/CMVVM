@@ -15,6 +15,11 @@ class BaseCoordinator: BaseCoordinatorProtocol, StoryBoardableCoordinator, ViewM
     
     init(parent: BaseCoordinatorProtocol?) {
         parentCoordinator = parent
+        setPresentable()
+    }
+    
+    func setPresentable() {
+        
     }
 }
 
@@ -32,10 +37,11 @@ protocol BaseCoordinatorProtocol: AnyObject {
 
 extension BaseCoordinatorProtocol {
     func coordinate(_ type: CoordinationType) {
-        presentable?.coordinate(type)
         switch type {
-        case .makeWindowVisible(_, let coordinatorBase):
+        case .makeWindowVisible(let window, let coordinatorBase):
             addChild(coordinatorBase)
+            makeWindowVisible(uiWindow: window, coordinatorBase.presentable)
+            return
         case .push(let coordinatorBase):
             addChild(coordinatorBase)
         case .pop:
@@ -45,6 +51,15 @@ extension BaseCoordinatorProtocol {
         case .dismiss:
             break
         }
+        presentable?.coordinate(type)
+    }
+    
+    private func makeWindowVisible(uiWindow: UIWindow, _ presentable: PresentableBase?) {
+        guard let targetViewController = presentable as? UIViewController else {
+            fatalError("ViewController Is Nil")
+        }
+        uiWindow.rootViewController = targetViewController
+        uiWindow.makeKeyAndVisible()
     }
     
     func addChild(_ coordinator: BaseCoordinatorProtocol) {

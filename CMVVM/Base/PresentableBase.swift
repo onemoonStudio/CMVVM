@@ -15,11 +15,12 @@ extension UIViewController: PresentableBase {
     func coordinate(_ type: CoordinationType) {
         switch type {
         case .makeWindowVisible(let uiWindow, let coordinatorBase):
-            guard let targetViewController = coordinatorBase.presentable as? UIViewController else {
-                fatalError("ViewController Is Nil")
-            }
-            uiWindow.rootViewController = targetViewController
-            uiWindow.makeKeyAndVisible()
+//            guard let targetViewController = coordinatorBase.presentable as? UIViewController else {
+//                fatalError("ViewController Is Nil")
+//            }
+//            uiWindow.rootViewController = targetViewController
+//            uiWindow.makeKeyAndVisible()
+            break
         case .push(let coordinatorBase):
             guard let targetViewController = coordinatorBase.presentable as? UIViewController else {
                 fatalError("ViewController Is Nil")
@@ -31,9 +32,9 @@ extension UIViewController: PresentableBase {
             guard let targetViewController = coordinatorBase.presentable as? UIViewController else {
                 fatalError("ViewController Is Nil")
             }
-            self.present(targetViewController, animated: true, completion: completion)
+            present(targetViewController, animated: true, completion: completion)
         case .dismiss(_, let completion):
-            self.dismiss(animated: true, completion: completion)
+            dismiss(animated: true, completion: completion)
         }
     }
 }

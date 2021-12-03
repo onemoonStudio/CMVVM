@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89188D84275A060C0032D558 /* FavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89188D83275A060C0032D558 /* FavoriteViewController.storyboard */; };
+		89188D86275A06140032D558 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D85275A06140032D558 /* FavoriteViewController.swift */; };
+		89188D88275A061E0032D558 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D87275A061E0032D558 /* FavoriteViewModel.swift */; };
 		89554750274CD72200503576 /* SceneDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */; };
 		89554752274CDF6100503576 /* PresentableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89554751274CDF6100503576 /* PresentableBase.swift */; };
 		89661719274F7FE000C8E73B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89661718274F7FE000C8E73B /* BaseCoordinator.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89188D83275A060C0032D558 /* FavoriteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteViewController.storyboard; sourceTree = "<group>"; };
+		89188D85275A06140032D558 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		89188D87275A061E0032D558 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateCoordinator.swift; sourceTree = "<group>"; };
 		89554751274CDF6100503576 /* PresentableBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableBase.swift; sourceTree = "<group>"; };
 		89661718274F7FE000C8E73B /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -94,13 +100,13 @@
 		89E83C48273E3CC70012244A /* CMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				89E83C49273E3CC70012244A /* AppDelegate.swift */,
+				8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */,
+				89E83C4B273E3CC70012244A /* SceneDelegate.swift */,
 				89E83C67273E3F2B0012244A /* Base */,
 				89E83C66273E3F200012244A /* MainTab */,
 				89E83C74273E47860012244A /* Search */,
 				89E83C75273E478B0012244A /* Favorite */,
-				89E83C49273E3CC70012244A /* AppDelegate.swift */,
-				8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */,
-				89E83C4B273E3CC70012244A /* SceneDelegate.swift */,
 				89E83C52273E3CCA0012244A /* Assets.xcassets */,
 				89E83C54273E3CCA0012244A /* LaunchScreen.storyboard */,
 				89E83C57273E3CCA0012244A /* Info.plist */,
@@ -148,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				FEB9F338275391F4008A5945 /* FavoriteCoordinator.swift */,
+				89188D83275A060C0032D558 /* FavoriteViewController.storyboard */,
+				89188D85275A06140032D558 /* FavoriteViewController.swift */,
+				89188D87275A061E0032D558 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E83C56273E3CCA0012244A /* LaunchScreen.storyboard in Resources */,
+				89188D84275A060C0032D558 /* FavoriteViewController.storyboard in Resources */,
 				89E83C53273E3CCA0012244A /* Assets.xcassets in Resources */,
 				89E83C69273E3F4D0012244A /* MainTabBarController.storyboard in Resources */,
 				89E83C7D27422C2C0012244A /* SearchViewController.storyboard in Resources */,
@@ -238,8 +248,10 @@
 				89E83C4A273E3CC70012244A /* AppDelegate.swift in Sources */,
 				89661719274F7FE000C8E73B /* BaseCoordinator.swift in Sources */,
 				89E83C70273E41B50012244A /* MainTabBarViewModel.swift in Sources */,
+				89188D86275A06140032D558 /* FavoriteViewController.swift in Sources */,
 				89E83C7F27422C3C0012244A /* SearchViewController.swift in Sources */,
 				89554752274CDF6100503576 /* PresentableBase.swift in Sources */,
+				89188D88275A061E0032D558 /* FavoriteViewModel.swift in Sources */,
 				89E83C6C273E41A40012244A /* MainTabBarController.swift in Sources */,
 				FEB9F33327538624008A5945 /* StoryboardableViewController.swift in Sources */,
 				FEB9F32F27537BD7008A5945 /* BaseViewModel.swift in Sources */,

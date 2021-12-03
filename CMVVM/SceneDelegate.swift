@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = scene as? UIWindowScene else { return }
         window = .init(windowScene: scene)
         if let window = window {
-            sceneDelegateCoordinator.coordinateMainTabBar()
+            sceneDelegateCoordinator.coordinateMainTabBar(window)
         }
     }
 

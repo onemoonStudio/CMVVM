@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+final class FavoriteCoordinator: BaseCoordinator {
+    override func setPresentable() {
+        let viewModel = FavoriteViewModel(coordinator: self)
+        let viewController = storyBoardViewController(viewModel: viewModel, FavoriteViewController.self)
+        presentable = viewController
+    }
+}
