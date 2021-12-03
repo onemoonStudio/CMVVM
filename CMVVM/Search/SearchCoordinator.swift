@@ -5,12 +5,8 @@
 //  Created by howard on 2021/11/15.
 //
 
-import UIKit
+import Foundation
 
-private enum SearchStoryBoards: String, InitiatableStoryboardSource {
-    case SearchViewController
-}
-
-final class SearchCoordinator: CoordinatorBaseClass {
+final class SearchCoordinator: BaseCoordinator {
     
 }

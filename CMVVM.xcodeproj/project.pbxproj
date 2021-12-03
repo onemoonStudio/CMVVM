@@ -23,11 +23,15 @@
 		89E83C70273E41B50012244A /* MainTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C6F273E41B50012244A /* MainTabBarViewModel.swift */; };
 		89E83C73273E42DC0012244A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 89E83C72273E42DC0012244A /* Alamofire */; };
 		89E83C77273E50480012244A /* StoryboardableCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C76273E50480012244A /* StoryboardableCoordinator.swift */; };
-		89E83C79273E58F10012244A /* CoordinatorBaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C78273E58F10012244A /* CoordinatorBaseProtocol.swift */; };
 		89E83C7B27421FF40012244A /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C7A27421FF40012244A /* SearchCoordinator.swift */; };
 		89E83C7D27422C2C0012244A /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E83C7C27422C2C0012244A /* SearchViewController.storyboard */; };
 		89E83C7F27422C3C0012244A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C7E27422C3C0012244A /* SearchViewController.swift */; };
 		89E83C8127422C450012244A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E83C8027422C450012244A /* SearchViewModel.swift */; };
+		FEB9F32F27537BD7008A5945 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9F32E27537BD7008A5945 /* BaseViewModel.swift */; };
+		FEB9F33127537BFD008A5945 /* CoordinateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9F33027537BFD008A5945 /* CoordinateType.swift */; };
+		FEB9F33327538624008A5945 /* StoryboardableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9F33227538624008A5945 /* StoryboardableViewController.swift */; };
+		FEB9F337275387B1008A5945 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9F336275387B1008A5945 /* BaseViewController.swift */; };
+		FEB9F339275391F4008A5945 /* FavoriteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB9F338275391F4008A5945 /* FavoriteCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,11 +49,15 @@
 		89E83C6D273E41AF0012244A /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		89E83C6F273E41B50012244A /* MainTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewModel.swift; sourceTree = "<group>"; };
 		89E83C76273E50480012244A /* StoryboardableCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardableCoordinator.swift; sourceTree = "<group>"; };
-		89E83C78273E58F10012244A /* CoordinatorBaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBaseProtocol.swift; sourceTree = "<group>"; };
 		89E83C7A27421FF40012244A /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		89E83C7C27422C2C0012244A /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		89E83C7E27422C3C0012244A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		89E83C8027422C450012244A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		FEB9F32E27537BD7008A5945 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		FEB9F33027537BFD008A5945 /* CoordinateType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateType.swift; sourceTree = "<group>"; };
+		FEB9F33227538624008A5945 /* StoryboardableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardableViewController.swift; sourceTree = "<group>"; };
+		FEB9F336275387B1008A5945 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FEB9F338275391F4008A5945 /* FavoriteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteCoordinator.swift; path = CMVVM/Base/FavoriteCoordinator.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +122,13 @@
 		89E83C67273E3F2B0012244A /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				89E83C76273E50480012244A /* StoryboardableCoordinator.swift */,
-				89E83C78273E58F10012244A /* CoordinatorBaseProtocol.swift */,
-				89554751274CDF6100503576 /* PresentableBase.swift */,
+				FEB9F33027537BFD008A5945 /* CoordinateType.swift */,
 				89661718274F7FE000C8E73B /* BaseCoordinator.swift */,
+				89554751274CDF6100503576 /* PresentableBase.swift */,
+				89E83C76273E50480012244A /* StoryboardableCoordinator.swift */,
+				FEB9F336275387B1008A5945 /* BaseViewController.swift */,
+				FEB9F33227538624008A5945 /* StoryboardableViewController.swift */,
+				FEB9F32E27537BD7008A5945 /* BaseViewModel.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -136,6 +147,7 @@
 		89E83C75273E478B0012244A /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				FEB9F338275391F4008A5945 /* FavoriteCoordinator.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -229,12 +241,16 @@
 				89E83C7F27422C3C0012244A /* SearchViewController.swift in Sources */,
 				89554752274CDF6100503576 /* PresentableBase.swift in Sources */,
 				89E83C6C273E41A40012244A /* MainTabBarController.swift in Sources */,
+				FEB9F33327538624008A5945 /* StoryboardableViewController.swift in Sources */,
+				FEB9F32F27537BD7008A5945 /* BaseViewModel.swift in Sources */,
+				FEB9F339275391F4008A5945 /* FavoriteCoordinator.swift in Sources */,
 				89E83C7B27421FF40012244A /* SearchCoordinator.swift in Sources */,
 				89E83C8127422C450012244A /* SearchViewModel.swift in Sources */,
 				89E83C4C273E3CC70012244A /* SceneDelegate.swift in Sources */,
 				89E83C77273E50480012244A /* StoryboardableCoordinator.swift in Sources */,
-				89E83C79273E58F10012244A /* CoordinatorBaseProtocol.swift in Sources */,
+				FEB9F337275387B1008A5945 /* BaseViewController.swift in Sources */,
 				89554750274CD72200503576 /* SceneDelegateCoordinator.swift in Sources */,
+				FEB9F33127537BFD008A5945 /* CoordinateType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

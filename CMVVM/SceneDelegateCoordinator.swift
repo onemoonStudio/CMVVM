@@ -8,13 +8,10 @@
 import Foundation
 import UIKit
 
-final class SceneDelegateCoordinator: CoordinatorBaseClass {
+final class SceneDelegateCoordinator: BaseCoordinator {
     func coordinateMainTabBar(_ uiwindow: UIWindow) {
-        let mainTabBarCoordinator = MainTabBarCoordinator()
-        guard let tabBarController = storyBoardViewController(MainStoryboards.MainTabBarController, MainTabBarController.self) else {
-            fatalError()
-        }
-        mainTabBarCoordinator.setPresentable(tabBarController)
+        let mainTabBarCoordinator = MainTabBarCoordinator(parent: self)
+        // presentable 을 만들어야 한다. 근데 여기서??
         coordinate(.makeWindowVisible(uiwindow, root: mainTabBarCoordinator))
     }
 }

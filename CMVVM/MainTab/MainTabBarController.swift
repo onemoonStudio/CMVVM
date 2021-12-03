@@ -7,6 +7,7 @@
 
 import UIKit
 
-final class MainTabBarController: UITabBarController {
+final class MainTabBarController: UITabBarController, StoryboardViewModeling {
+    var viewModel: BaseViewModelProtocol?
     
 }
