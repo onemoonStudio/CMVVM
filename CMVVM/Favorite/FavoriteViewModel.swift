@@ -7,6 +7,14 @@
 
 import Foundation
 
-final class FavoriteViewModel: BaseViewModel {
+protocol FavoriteViewAction {
+    
+}
+
+protocol FavoriteModelOutput {
+    
+}
+
+final class FavoriteViewModel: BaseViewModel, FavoriteViewAction, FavoriteModelOutput {
     
 }

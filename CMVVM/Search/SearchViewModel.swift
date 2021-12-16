@@ -6,7 +6,27 @@
 //
 
 import Foundation
+import RxSwift
 
-final class SearchViewModel: BaseViewModel {
+protocol SearchViewAction {
+    func didTapCocktailAlphabet(at indexPath: IndexPath)
+}
+
+protocol SearchModelOutput {
+    var alphabetList: [String] { get }
+    func cellAlphabet(at indexPath: IndexPath) -> String?
+}
+
+final class SearchViewModel: BaseViewModel, SearchViewAction, SearchModelOutput {
+    func didTapCocktailAlphabet(at indexPath: IndexPath) {
+        // coordinate
+        
+    }
     
+    let alphabetList: [String] = [Int](65...90).compactMap { UnicodeScalar($0) }.map { String(Character($0)) }
+    
+    func cellAlphabet(at indexPath: IndexPath) -> String? {
+        guard alphabetList.count > indexPath.row else { return nil }
+        return alphabetList[indexPath.row]
+    }
 }

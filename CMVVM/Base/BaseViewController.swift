@@ -9,8 +9,27 @@ import UIKit
 
 typealias StoryboardViewModeling = BaseViewControllerProtocol & StoryboardableViewController
 
-class BaseViewController: UIViewController, StoryboardViewModeling {
-    weak var viewModel: BaseViewModelProtocol?
+//class BaseViewController<ViewModel: BaseViewModelProtocol>: UIViewController, StoryboardViewModeling {
+//    var viewModel: ViewModel?
+//}
+
+class BaseViewController<ViewAction, ModelOutput>: UIViewController, StoryboardViewModeling {
+    lazy var viewAction: ViewAction = {
+        viewModel as! ViewAction
+    }()
+    lazy var modelOutput: ModelOutput = {
+        viewModel as! ModelOutput
+    }()
+    var viewModel: BaseViewModelProtocol?
+    
+    init(_ viewModel: BaseViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
 }
 
 protocol BaseViewControllerProtocol: AnyObject {

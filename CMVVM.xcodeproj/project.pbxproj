@@ -10,6 +10,13 @@
 		89188D84275A060C0032D558 /* FavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89188D83275A060C0032D558 /* FavoriteViewController.storyboard */; };
 		89188D86275A06140032D558 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D85275A06140032D558 /* FavoriteViewController.swift */; };
 		89188D88275A061E0032D558 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D87275A061E0032D558 /* FavoriteViewModel.swift */; };
+		89188D8C27608EFE0032D558 /* CocktailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D8B27608EFE0032D558 /* CocktailInfo.swift */; };
+		89188D8E27608F100032D558 /* CocktailDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D8D27608F100032D558 /* CocktailDetail.swift */; };
+		89188D912761DC9F0032D558 /* CocktailTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D902761DC9F0032D558 /* CocktailTarget.swift */; };
+		89188D932761DCB10032D558 /* CocktailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89188D922761DCB10032D558 /* CocktailProvider.swift */; };
+		89188D9B2761DE2E0032D558 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 89188D9A2761DE2E0032D558 /* Moya */; };
+		89188D9D2761DE2E0032D558 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 89188D9C2761DE2E0032D558 /* ReactiveMoya */; };
+		89188D9F2761DE2E0032D558 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 89188D9E2761DE2E0032D558 /* RxMoya */; };
 		89554750274CD72200503576 /* SceneDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */; };
 		89554752274CDF6100503576 /* PresentableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89554751274CDF6100503576 /* PresentableBase.swift */; };
 		89661719274F7FE000C8E73B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89661718274F7FE000C8E73B /* BaseCoordinator.swift */; };
@@ -41,6 +48,10 @@
 		89188D83275A060C0032D558 /* FavoriteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteViewController.storyboard; sourceTree = "<group>"; };
 		89188D85275A06140032D558 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		89188D87275A061E0032D558 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		89188D8B27608EFE0032D558 /* CocktailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailInfo.swift; sourceTree = "<group>"; };
+		89188D8D27608F100032D558 /* CocktailDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetail.swift; sourceTree = "<group>"; };
+		89188D902761DC9F0032D558 /* CocktailTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailTarget.swift; sourceTree = "<group>"; };
+		89188D922761DCB10032D558 /* CocktailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailProvider.swift; sourceTree = "<group>"; };
 		8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateCoordinator.swift; sourceTree = "<group>"; };
 		89554751274CDF6100503576 /* PresentableBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableBase.swift; sourceTree = "<group>"; };
 		89661718274F7FE000C8E73B /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -74,13 +85,34 @@
 				89E83C73273E42DC0012244A /* Alamofire in Frameworks */,
 				89E83C63273E3E250012244A /* RxSwift in Frameworks */,
 				89E83C61273E3E250012244A /* RxRelay in Frameworks */,
+				89188D9B2761DE2E0032D558 /* Moya in Frameworks */,
+				89188D9F2761DE2E0032D558 /* RxMoya in Frameworks */,
 				89E83C5F273E3E250012244A /* RxCocoa in Frameworks */,
+				89188D9D2761DE2E0032D558 /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89188D8A2760818B0032D558 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89188D8B27608EFE0032D558 /* CocktailInfo.swift */,
+				89188D8D27608F100032D558 /* CocktailDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		89188D8F27608F340032D558 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				89188D902761DC9F0032D558 /* CocktailTarget.swift */,
+				89188D922761DCB10032D558 /* CocktailProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		89E83C3D273E3CC70012244A = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +132,8 @@
 		89E83C48273E3CC70012244A /* CMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				89188D8F27608F340032D558 /* Network */,
+				89188D8A2760818B0032D558 /* Model */,
 				89E83C49273E3CC70012244A /* AppDelegate.swift */,
 				8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */,
 				89E83C4B273E3CC70012244A /* SceneDelegate.swift */,
@@ -182,6 +216,9 @@
 				89E83C60273E3E250012244A /* RxRelay */,
 				89E83C62273E3E250012244A /* RxSwift */,
 				89E83C72273E42DC0012244A /* Alamofire */,
+				89188D9A2761DE2E0032D558 /* Moya */,
+				89188D9C2761DE2E0032D558 /* ReactiveMoya */,
+				89188D9E2761DE2E0032D558 /* RxMoya */,
 			);
 			productName = CMVVM;
 			productReference = 89E83C46273E3CC70012244A /* CMVVM.app */;
@@ -214,6 +251,7 @@
 			packageReferences = (
 				89E83C5D273E3E250012244A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				89E83C71273E42DC0012244A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 89E83C47273E3CC70012244A /* Products */;
 			projectDirPath = "";
@@ -246,7 +284,9 @@
 			files = (
 				89E83C6E273E41AF0012244A /* MainTabBarCoordinator.swift in Sources */,
 				89E83C4A273E3CC70012244A /* AppDelegate.swift in Sources */,
+				89188D912761DC9F0032D558 /* CocktailTarget.swift in Sources */,
 				89661719274F7FE000C8E73B /* BaseCoordinator.swift in Sources */,
+				89188D8C27608EFE0032D558 /* CocktailInfo.swift in Sources */,
 				89E83C70273E41B50012244A /* MainTabBarViewModel.swift in Sources */,
 				89188D86275A06140032D558 /* FavoriteViewController.swift in Sources */,
 				89E83C7F27422C3C0012244A /* SearchViewController.swift in Sources */,
@@ -261,8 +301,10 @@
 				89E83C4C273E3CC70012244A /* SceneDelegate.swift in Sources */,
 				89E83C77273E50480012244A /* StoryboardableCoordinator.swift in Sources */,
 				FEB9F337275387B1008A5945 /* BaseViewController.swift in Sources */,
+				89188D932761DCB10032D558 /* CocktailProvider.swift in Sources */,
 				89554750274CD72200503576 /* SceneDelegateCoordinator.swift in Sources */,
 				FEB9F33127537BFD008A5945 /* CoordinateType.swift in Sources */,
+				89188D8E27608F100032D558 /* CocktailDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +516,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = exactVersion;
+				version = 15.0.0;
+			};
+		};
 		89E83C5D273E3E250012244A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -493,6 +543,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		89188D9A2761DE2E0032D558 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		89188D9C2761DE2E0032D558 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		89188D9E2761DE2E0032D558 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		89E83C5E273E3E250012244A /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 89E83C5D273E3E250012244A /* XCRemoteSwiftPackageReference "RxSwift" */;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class FavoriteViewController: BaseViewController {
+final class FavoriteViewController: BaseViewController<FavoriteViewAction, FavoriteModelOutput> {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("favorite")

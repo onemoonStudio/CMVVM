@@ -5,7 +5,6 @@
 //  Created by howard on 2021/11/23.
 //
 
-import Foundation
 import UIKit
 
 final class SceneDelegateCoordinator: BaseCoordinator {

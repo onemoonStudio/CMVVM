@@ -16,20 +16,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbL-Wf-nPF">
-                                <rect key="frame" x="180.5" y="437.5" width="53.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="iwa-2X-svC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CocktailAlphabetCell" id="dW1-SC-Foq" customClass="CocktailAlphabetCell" customModule="CMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="48.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dW1-SC-Foq" id="2y0-Gb-IU8">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqd-KU-U2G">
+                                                    <rect key="frame" x="28" y="14" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="WrG-kO-9lJ">
+                                                    <rect key="frame" x="382" y="18" width="16" height="13"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="Xai-Fl-Jjf"/>
+                                                        <constraint firstAttribute="width" constant="16" id="mjb-2u-Wga"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rqd-KU-U2G" firstAttribute="centerY" secondItem="2y0-Gb-IU8" secondAttribute="centerY" id="FYb-SM-mOF"/>
+                                                <constraint firstAttribute="bottom" secondItem="WrG-kO-9lJ" secondAttribute="bottom" constant="16" id="JpF-DZ-mjU"/>
+                                                <constraint firstItem="WrG-kO-9lJ" firstAttribute="centerY" secondItem="2y0-Gb-IU8" secondAttribute="centerY" id="SAC-gA-Wuz"/>
+                                                <constraint firstItem="WrG-kO-9lJ" firstAttribute="top" secondItem="2y0-Gb-IU8" secondAttribute="top" constant="16" id="TA4-sQ-QRO"/>
+                                                <constraint firstAttribute="trailing" secondItem="WrG-kO-9lJ" secondAttribute="trailing" constant="16" id="vI1-Vy-Zl0"/>
+                                                <constraint firstItem="rqd-KU-U2G" firstAttribute="leading" secondItem="2y0-Gb-IU8" secondAttribute="leadingMargin" constant="8" id="x6q-IH-Jss"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="alphabetLabel" destination="rqd-KU-U2G" id="LsD-WO-6im"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LbL-Wf-nPF" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="5Ya-R5-yPR"/>
-                            <constraint firstItem="LbL-Wf-nPF" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="MyS-se-GzB"/>
+                            <constraint firstItem="iwa-2X-svC" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="1m1-Rg-389"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="iwa-2X-svC" secondAttribute="bottom" id="H3h-GH-8wn"/>
+                            <constraint firstItem="iwa-2X-svC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="aiM-YQ-K5B"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iwa-2X-svC" secondAttribute="trailing" id="iAO-LZ-s2D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cocktailAlphabetTableView" destination="iwa-2X-svC" id="GYf-Ox-qre"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,6 +77,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

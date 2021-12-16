@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BaseViewModel: BaseViewModelProtocol {
+class BaseViewModel: NSObject, BaseViewModelProtocol {
     weak var coordinator: ViewModelCoordinatorConnector?
     
     init(coordinator: ViewModelCoordinatorConnector) {
