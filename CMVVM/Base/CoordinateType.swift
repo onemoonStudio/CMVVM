@@ -10,7 +10,7 @@ import UIKit
 enum CoordinationType {
     case makeWindowVisible(UIWindow, root: BaseCoordinatorProtocol)
     case push(BaseCoordinatorProtocol)
-    case pop(BaseCoordinatorProtocol)
+    case pop
     case present(BaseCoordinatorProtocol, completion: (() -> Void)?)
-    case dismiss(BaseCoordinatorProtocol, completion: (() -> Void)?)
+    case dismiss(completion: (() -> Void)?)
 }

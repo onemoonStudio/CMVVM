@@ -33,7 +33,7 @@ extension UIViewController: PresentableBase {
                 fatalError("ViewController Is Nil")
             }
             present(targetViewController, animated: true, completion: completion)
-        case .dismiss(_, let completion):
+        case .dismiss(let completion):
             dismiss(animated: true, completion: completion)
         }
     }

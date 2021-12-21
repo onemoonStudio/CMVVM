@@ -17,10 +17,13 @@ protocol SearchModelOutput {
     func cellAlphabet(at indexPath: IndexPath) -> String?
 }
 
-final class SearchViewModel: BaseViewModel, SearchViewAction, SearchModelOutput {
+final class SearchViewModel: BaseViewModel<SearchCoordinatorAction>, SearchViewAction, SearchModelOutput {
+    
     func didTapCocktailAlphabet(at indexPath: IndexPath) {
-        // coordinate
-        
+        guard let tappedAlphabet = cellAlphabet(at: indexPath) else {
+            return
+        }
+        coordinatorAction?.showCocktailList(for: tappedAlphabet)
     }
     
     let alphabetList: [String] = [Int](65...90).compactMap { UnicodeScalar($0) }.map { String(Character($0)) }

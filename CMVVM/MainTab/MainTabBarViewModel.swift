@@ -7,6 +7,6 @@
 
 import Foundation
 
-final class MainTabBarViewModel: BaseViewModel {
+final class MainTabBarViewModel: BaseViewModel<Void> {
     
 }

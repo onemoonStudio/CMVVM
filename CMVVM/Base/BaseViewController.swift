@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 typealias StoryboardViewModeling = BaseViewControllerProtocol & StoryboardableViewController
 
@@ -14,6 +15,7 @@ typealias StoryboardViewModeling = BaseViewControllerProtocol & StoryboardableVi
 //}
 
 class BaseViewController<ViewAction, ModelOutput>: UIViewController, StoryboardViewModeling {
+    let disposeBag = DisposeBag()
     lazy var viewAction: ViewAction = {
         viewModel as! ViewAction
     }()

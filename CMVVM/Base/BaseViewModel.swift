@@ -6,15 +6,21 @@
 //
 
 import Foundation
+import RxSwift
 
-class BaseViewModel: NSObject, BaseViewModelProtocol {
+class BaseViewModel<CoordinatorAction>: NSObject, BaseViewModelProtocol {
+    let disposeBag = DisposeBag()
     weak var coordinator: ViewModelCoordinatorConnector?
+    var coordinatorAction: CoordinatorAction? {
+        coordinator as? CoordinatorAction
+    }
     
     init(coordinator: ViewModelCoordinatorConnector) {
         self.coordinator = coordinator
     }
     
     deinit {
+        print("free coordinator \(String(describing: self))")
         freeSelfCoordinator()
     }
 }
@@ -26,16 +32,16 @@ protocol BaseViewModelProtocol: AnyObject {
 
 extension BaseViewModelProtocol  {
     func freeSelfCoordinator() {
-        coordinator?.freeSelfCoordinator()
+        coordinator?.freeFromParent()
     }
 }
 
 protocol ViewModelCoordinatorConnector: AnyObject {
-    func freeSelfCoordinator()
+    func freeFromParent()
 }
 
 extension ViewModelCoordinatorConnector where Self: BaseCoordinatorProtocol {
-    func freeSelfCoordinator() {
+    func freeFromParent() {
         parentCoordinator?.removeChild(self.identifier)
     }
 }

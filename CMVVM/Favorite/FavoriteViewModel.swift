@@ -15,6 +15,6 @@ protocol FavoriteModelOutput {
     
 }
 
-final class FavoriteViewModel: BaseViewModel, FavoriteViewAction, FavoriteModelOutput {
+final class FavoriteViewModel: BaseViewModel<Void>, FavoriteViewAction, FavoriteModelOutput {
     
 }
