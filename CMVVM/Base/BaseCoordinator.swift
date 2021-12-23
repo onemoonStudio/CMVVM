@@ -21,6 +21,10 @@ class BaseCoordinator: BaseCoordinatorProtocol, StoryBoardableCoordinator, ViewM
     func setPresentable() {
         
     }
+    
+    deinit {
+        print(">> 👋🏻 free Coordinator \(String(describing: self))")
+    }
 }
 
 protocol BaseCoordinatorProtocol: AnyObject {

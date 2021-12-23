@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -49,6 +50,55 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dWR-ou-1X3">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CocktailListTableViewCell" rowHeight="58" id="jse-c3-k8U" customClass="CocktailListTableViewCell" customModule="CMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="58"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jse-c3-k8U" id="y62-WD-U1v">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FVc-JM-LfE">
+                                                    <rect key="frame" x="8" y="0.0" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="kyA-4z-wxm"/>
+                                                        <constraint firstAttribute="width" constant="50" id="pq7-LF-aTS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0c-SC-YjL">
+                                                    <rect key="frame" x="74" y="18.5" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-NB-c4q">
+                                                    <rect key="frame" x="356" y="1" width="50" height="48"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="2cK-zj-uEU"/>
+                                                        <constraint firstAttribute="height" constant="50" id="WLg-6z-SWo"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="chevron.right" catalog="system" symbolScale="default"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="semibold"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FTf-NB-c4q" secondAttribute="trailing" constant="8" id="0Tr-VX-gVV"/>
+                                                <constraint firstItem="j0c-SC-YjL" firstAttribute="leading" secondItem="FVc-JM-LfE" secondAttribute="trailing" constant="16" id="43Y-jk-ePu"/>
+                                                <constraint firstItem="FTf-NB-c4q" firstAttribute="leading" secondItem="j0c-SC-YjL" secondAttribute="trailing" constant="16" id="BA9-sn-WZC"/>
+                                                <constraint firstItem="j0c-SC-YjL" firstAttribute="centerY" secondItem="y62-WD-U1v" secondAttribute="centerY" id="Hrw-YW-bPS"/>
+                                                <constraint firstItem="FVc-JM-LfE" firstAttribute="top" secondItem="y62-WD-U1v" secondAttribute="top" id="UPm-cs-M4n"/>
+                                                <constraint firstAttribute="bottom" secondItem="FTf-NB-c4q" secondAttribute="bottom" constant="8" id="es7-1z-lX7"/>
+                                                <constraint firstAttribute="bottom" secondItem="FVc-JM-LfE" secondAttribute="bottom" constant="8" id="h25-RO-Ivi"/>
+                                                <constraint firstItem="FVc-JM-LfE" firstAttribute="leading" secondItem="y62-WD-U1v" secondAttribute="leading" constant="8" id="sG5-Qw-frj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cocktailNameLabel" destination="j0c-SC-YjL" id="534-vL-LO3"/>
+                                            <outlet property="thumbnailImageView" destination="FVc-JM-LfE" id="D4f-Od-dVW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -64,17 +114,22 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cocktailListTableView" destination="dWR-ou-1X3" id="Itk-Ut-9i3"/>
                         <outlet property="navigationBackButton" destination="y7R-1P-01i" id="j6z-0N-0CQ"/>
                         <outlet property="navigationTitleLabel" destination="eGF-eA-bwt" id="jdG-KO-2Nx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="131"/>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
         </scene>
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

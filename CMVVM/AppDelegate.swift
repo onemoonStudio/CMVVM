@@ -7,6 +7,7 @@
 
 import UIKit
 import RxCocoa
+import Kingfisher
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -32,6 +32,10 @@ class BaseViewController<ViewAction, ModelOutput>: UIViewController, StoryboardV
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
+    deinit {
+        print(">> 👋🏻 free ViewController \(String(describing: self))")
+    }
 }
 
 protocol BaseViewControllerProtocol: AnyObject {

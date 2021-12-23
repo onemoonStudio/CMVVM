@@ -21,6 +21,8 @@
 		891B3507276C8DAC00C9D220 /* CocktailListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 891B3506276C8DAC00C9D220 /* CocktailListViewController.storyboard */; };
 		891B3509276C8DB200C9D220 /* CocktailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891B3508276C8DB200C9D220 /* CocktailListViewController.swift */; };
 		891B350B276C8DD400C9D220 /* CocktailListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891B350A276C8DD400C9D220 /* CocktailListViewModel.swift */; };
+		891B350E27744F5600C9D220 /* CocktailListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891B350D27744F5600C9D220 /* CocktailListTableViewCell.swift */; };
+		891B35112774684B00C9D220 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 891B35102774684B00C9D220 /* Kingfisher */; };
 		89554750274CD72200503576 /* SceneDelegateCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */; };
 		89554752274CDF6100503576 /* PresentableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89554751274CDF6100503576 /* PresentableBase.swift */; };
 		89661719274F7FE000C8E73B /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89661718274F7FE000C8E73B /* BaseCoordinator.swift */; };
@@ -60,6 +62,7 @@
 		891B3506276C8DAC00C9D220 /* CocktailListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CocktailListViewController.storyboard; sourceTree = "<group>"; };
 		891B3508276C8DB200C9D220 /* CocktailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewController.swift; sourceTree = "<group>"; };
 		891B350A276C8DD400C9D220 /* CocktailListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListViewModel.swift; sourceTree = "<group>"; };
+		891B350D27744F5600C9D220 /* CocktailListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListTableViewCell.swift; sourceTree = "<group>"; };
 		8955474F274CD72200503576 /* SceneDelegateCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateCoordinator.swift; sourceTree = "<group>"; };
 		89554751274CDF6100503576 /* PresentableBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableBase.swift; sourceTree = "<group>"; };
 		89661718274F7FE000C8E73B /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -94,6 +97,7 @@
 				89E83C63273E3E250012244A /* RxSwift in Frameworks */,
 				89E83C61273E3E250012244A /* RxRelay in Frameworks */,
 				89188D9B2761DE2E0032D558 /* Moya in Frameworks */,
+				891B35112774684B00C9D220 /* Kingfisher in Frameworks */,
 				89188D9F2761DE2E0032D558 /* RxMoya in Frameworks */,
 				89E83C5F273E3E250012244A /* RxCocoa in Frameworks */,
 				89188D9D2761DE2E0032D558 /* ReactiveMoya in Frameworks */,
@@ -125,11 +129,20 @@
 			isa = PBXGroup;
 			children = (
 				891B3504276C8D7600C9D220 /* CocktailListCoordinator.swift */,
-				891B3506276C8DAC00C9D220 /* CocktailListViewController.storyboard */,
-				891B3508276C8DB200C9D220 /* CocktailListViewController.swift */,
+				891B350C27744F3D00C9D220 /* View */,
 				891B350A276C8DD400C9D220 /* CocktailListViewModel.swift */,
 			);
 			path = CocktailList;
+			sourceTree = "<group>";
+		};
+		891B350C27744F3D00C9D220 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				891B3506276C8DAC00C9D220 /* CocktailListViewController.storyboard */,
+				891B3508276C8DB200C9D220 /* CocktailListViewController.swift */,
+				891B350D27744F5600C9D220 /* CocktailListTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		89E83C3D273E3CC70012244A = {
@@ -239,6 +252,7 @@
 				89188D9A2761DE2E0032D558 /* Moya */,
 				89188D9C2761DE2E0032D558 /* ReactiveMoya */,
 				89188D9E2761DE2E0032D558 /* RxMoya */,
+				891B35102774684B00C9D220 /* Kingfisher */,
 			);
 			productName = CMVVM;
 			productReference = 89E83C46273E3CC70012244A /* CMVVM.app */;
@@ -272,6 +286,7 @@
 				89E83C5D273E3E250012244A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				89E83C71273E42DC0012244A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */,
+				891B350F2774684B00C9D220 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 89E83C47273E3CC70012244A /* Products */;
 			projectDirPath = "";
@@ -313,6 +328,7 @@
 				89E83C7F27422C3C0012244A /* SearchViewController.swift in Sources */,
 				89554752274CDF6100503576 /* PresentableBase.swift in Sources */,
 				89188D88275A061E0032D558 /* FavoriteViewModel.swift in Sources */,
+				891B350E27744F5600C9D220 /* CocktailListTableViewCell.swift in Sources */,
 				89E83C6C273E41A40012244A /* MainTabBarController.swift in Sources */,
 				FEB9F33327538624008A5945 /* StoryboardableViewController.swift in Sources */,
 				FEB9F32F27537BD7008A5945 /* BaseViewModel.swift in Sources */,
@@ -548,6 +564,14 @@
 				version = 15.0.0;
 			};
 		};
+		891B350F2774684B00C9D220 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		89E83C5D273E3E250012244A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -581,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 89188D992761DE2E0032D558 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		891B35102774684B00C9D220 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 891B350F2774684B00C9D220 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		89E83C5E273E3E250012244A /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;

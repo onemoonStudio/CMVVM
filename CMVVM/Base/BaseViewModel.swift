@@ -20,7 +20,7 @@ class BaseViewModel<CoordinatorAction>: NSObject, BaseViewModelProtocol {
     }
     
     deinit {
-        print("free coordinator \(String(describing: self))")
+        print(">> 👋🏻 free ViewModel \(String(describing: self))")
         freeSelfCoordinator()
     }
 }
