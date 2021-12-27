@@ -17,6 +17,12 @@ class BaseViewModel<CoordinatorAction>: NSObject, BaseViewModelProtocol {
     
     init(coordinator: ViewModelCoordinatorConnector) {
         self.coordinator = coordinator
+        super.init()
+        baseBinding()
+    }
+    
+    func baseBinding() {
+        
     }
     
     deinit {

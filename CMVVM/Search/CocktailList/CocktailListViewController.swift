@@ -37,18 +37,17 @@ final class CocktailListViewController: BaseViewController<CocktailListViewActio
     }
     
     private func viewModelBinding() {
-        modelOutput.cocktailListRelay
-            .compactMap { $0 }
-            .subscribe { [weak self] _ in
+        modelOutput.reloadTableViewRelay
+            .subscribe(onNext: { [weak self] _ in
                 self?.cocktailListTableView.reloadData()
-            }
+            })
             .disposed(by: disposeBag)
     }
 }
 
 extension CocktailListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modelOutput.cocktailListRelay.value?.drinks.count ?? 0
+        return modelOutput.cocktailList?.drinks.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,11 +59,18 @@ extension CocktailListViewController: UITableViewDelegate, UITableViewDataSource
             cell.setUI(thumbURL: cocktailInfo.strDrinkThumb, name: cocktailInfo.strDrink)
         }
         
+        cell.setFavorite(modelOutput.isFavoriteCocktail(at: indexPath))
+        
+        cell.favoriteButton.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                self?.viewAction.toggleCocktailFavoriteState(at: indexPath)
+            })
+            .disposed(by: cell.temporaryBag)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
     }
-    
 }

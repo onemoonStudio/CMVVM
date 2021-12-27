@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,35 +65,38 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0c-SC-YjL">
-                                                    <rect key="frame" x="74" y="18.5" width="266" height="21"/>
+                                                    <rect key="frame" x="74" y="14.5" width="274" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-NB-c4q">
-                                                    <rect key="frame" x="356" y="1" width="50" height="48"/>
-                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nn-dW-PeW">
+                                                    <rect key="frame" x="356" y="0.0" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="2cK-zj-uEU"/>
-                                                        <constraint firstAttribute="height" constant="50" id="WLg-6z-SWo"/>
+                                                        <constraint firstAttribute="height" constant="50" id="9Fy-mA-x66"/>
+                                                        <constraint firstAttribute="width" constant="50" id="Ju1-TA-sBb"/>
                                                     </constraints>
-                                                    <imageReference key="image" image="chevron.right" catalog="system" symbolScale="default"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="semibold"/>
-                                                </imageView>
+                                                    <color key="tintColor" systemColor="systemRedColor"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" image="heart" catalog="system"/>
+                                                    <state key="selected" image="heart.fill" catalog="system"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="FTf-NB-c4q" secondAttribute="trailing" constant="8" id="0Tr-VX-gVV"/>
+                                                <constraint firstItem="4nn-dW-PeW" firstAttribute="leading" secondItem="j0c-SC-YjL" secondAttribute="trailing" constant="8" id="3oS-Jj-zW8"/>
                                                 <constraint firstItem="j0c-SC-YjL" firstAttribute="leading" secondItem="FVc-JM-LfE" secondAttribute="trailing" constant="16" id="43Y-jk-ePu"/>
-                                                <constraint firstItem="FTf-NB-c4q" firstAttribute="leading" secondItem="j0c-SC-YjL" secondAttribute="trailing" constant="16" id="BA9-sn-WZC"/>
-                                                <constraint firstItem="j0c-SC-YjL" firstAttribute="centerY" secondItem="y62-WD-U1v" secondAttribute="centerY" id="Hrw-YW-bPS"/>
                                                 <constraint firstItem="FVc-JM-LfE" firstAttribute="top" secondItem="y62-WD-U1v" secondAttribute="top" id="UPm-cs-M4n"/>
-                                                <constraint firstAttribute="bottom" secondItem="FTf-NB-c4q" secondAttribute="bottom" constant="8" id="es7-1z-lX7"/>
+                                                <constraint firstAttribute="bottom" secondItem="4nn-dW-PeW" secondAttribute="bottom" constant="8" id="UoM-1g-4Y6"/>
+                                                <constraint firstItem="j0c-SC-YjL" firstAttribute="centerY" secondItem="FVc-JM-LfE" secondAttribute="centerY" id="dMN-6T-phP"/>
                                                 <constraint firstAttribute="bottom" secondItem="FVc-JM-LfE" secondAttribute="bottom" constant="8" id="h25-RO-Ivi"/>
+                                                <constraint firstAttribute="trailing" secondItem="4nn-dW-PeW" secondAttribute="trailing" constant="8" id="pW3-ul-okx"/>
+                                                <constraint firstItem="4nn-dW-PeW" firstAttribute="top" secondItem="y62-WD-U1v" secondAttribute="top" id="rNl-sV-Rec"/>
                                                 <constraint firstItem="FVc-JM-LfE" firstAttribute="leading" secondItem="y62-WD-U1v" secondAttribute="leading" constant="8" id="sG5-Qw-frj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cocktailNameLabel" destination="j0c-SC-YjL" id="534-vL-LO3"/>
+                                            <outlet property="favoriteButton" destination="4nn-dW-PeW" id="GKV-e2-h18"/>
                                             <outlet property="thumbnailImageView" destination="FVc-JM-LfE" id="D4f-Od-dVW"/>
                                         </connections>
                                     </tableViewCell>
@@ -126,12 +128,13 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
