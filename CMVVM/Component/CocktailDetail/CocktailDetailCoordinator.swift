@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol CocktailDetailCoordinatorAction {
+    
+}
+
+final class CocktailDetailCoordinator: BaseCoordinator, CocktailDetailCoordinatorAction {
+    
+}

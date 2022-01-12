@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+protocol CocktailDetailViewAction {
+    
+}
+
+protocol CocktailDetailModelOutput {
+    
+}
+
+final class CocktailDetailViewModel: BaseViewModel<CocktailDetailCoordinatorAction>, CocktailDetailViewAction, CocktailDetailModelOutput {
+    
+}

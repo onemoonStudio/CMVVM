@@ -16,6 +16,7 @@ enum CocktailTarget: TargetType {
         URL(string: "https://www.thecocktaildb.com")!
     }
     
+//    www.thecocktaildb.com/api/json/v1/1/search.php?f=a
     var path: String {
         let basePath: String = "/api/json/v1/1"
         switch self {

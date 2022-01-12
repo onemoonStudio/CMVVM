@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+final class CocktailDetailViewController: BaseViewController<CocktailDetailViewAction, CocktailDetailModelOutput> {
+    
+}
